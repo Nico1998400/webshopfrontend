@@ -8,7 +8,7 @@ const  HomeScreen = () => {
 
   useEffect(() => {
   const loadProduct = async () => {
-    await fetch('https://ed65-83-248-1-128.eu.ngrok.io/api/product')
+    await fetch('https://6848-83-248-1-128.eu.ngrok.io/api/product')
     .then((res) => res.json())
     .then((data) => setProduct(data));
     console.log(product)
@@ -28,6 +28,7 @@ const  HomeScreen = () => {
           <View key={index}>
             <Text>ProductID: {item.productID}</Text>
             <Text>ProductName: {item.productName}</Text>
+            <Text>productTitle: {item.productTitle}</Text>
             <Text>ProductDesciption: {item.description}</Text>
             <Text>Price: {item.price}</Text>
             <Text>Photo: {item.photo}</Text>
