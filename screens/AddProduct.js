@@ -1,4 +1,4 @@
-import { useState } from "react";
+/*import { useState } from "react";
 import { TextInput, View, Button } from 'react-native';
 
 
@@ -9,7 +9,7 @@ const AddProduct = () => {
 
     const addnewProduct = async (product) => {
 
-        await fetch("https://6848-83-248-1-128.eu.ngrok.io/api/product/post", {
+        await fetch("http://10.0.2.2:8080/api/product/post", {
           method: "POST",
 
           headers: { 'Content-Type': 'application/json' },
@@ -39,21 +39,22 @@ const AddProduct = () => {
         )
       }
 
-      export default AddProduct;
+      export default AddProduct;*/
 
-/*import React, { useState } from "react";
-import { TextInput, View, Pressable, Text } from 'react-native';
+import React, { useState } from "react";
+import { TextInput, View, Pressable, Text, Image } from 'react-native';
 
 const AddProduct = () => {
-    const [input, setInput] = useState({productName:""})
+    const [input, setInput] = useState({productName:"", productTitle:"", description:"", price:""})
 
-    const handleChange = (e) => {
-        setInput(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    const handleChange = (name, text) => {
+      console.log(name, text)
+        setInput(prev => ({ ...prev, [name]: text}));
       };
 
     const addProduct = async () => {
         console.log("input:", input);
-        await fetch("https://ed65-83-248-1-128.eu.ngrok.io/api/product/post", {
+        await fetch("http://10.0.2.2:8080/api/product/post", {
           method: "POST",
           body: JSON.stringify(input),
           headers: {
@@ -65,10 +66,21 @@ const AddProduct = () => {
   return (
     <View>
         <TextInput
+        placeholder='Product Name'
         value={input.productName}
-        name="productName"
-        onChange={handleChange}/>
-        
+        onChangeText={(text) => handleChange("productName", text)}/>
+        <TextInput
+        placeholder='Product Title'
+        value={input.productTitle}
+        onChangeText={(text) => handleChange("productTitle", text)}/>
+        <TextInput
+        placeholder='Description'
+        value={input.description}
+        onChangeText={(text) => handleChange("description", text)}/>
+        <TextInput
+        placeholder='Price'
+        value={input.price}
+        onChangeText={(text) => handleChange("price", text, )}/>
         <Pressable
         onPress={addProduct}>
             <Text>Submit</Text>
@@ -78,4 +90,4 @@ const AddProduct = () => {
   )
 }
 
-export default AddProduct; */
+export default AddProduct;

@@ -8,16 +8,13 @@ const  HomeScreen = () => {
 
   useEffect(() => {
   const loadProduct = async () => {
-    await fetch('https://6848-83-248-1-128.eu.ngrok.io/api/product')
+    await fetch('http://10.0.2.2:8080/api/product')
     .then((res) => res.json())
     .then((data) => setProduct(data));
     console.log(product)
   };
   loadProduct();
   }, []);
-
-  
-
 
   return (
     <View>
