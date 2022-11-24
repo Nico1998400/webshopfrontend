@@ -21,6 +21,7 @@ const  HomeScreen = () => {
       <Pressable onPress={() => nav.navigate('addproduct')}>
         <Text>Add Product</Text>
         </Pressable>
+        <Pressable onPress={() => nav.navigate('productscreen', {product})}>
         {product.map((item, index) => (
           <View key={index}>
             <Text>ProductID: {item.productID}</Text>
@@ -31,6 +32,7 @@ const  HomeScreen = () => {
             <Text>Photo: {item.photo}</Text>
           </View>
         ))}
+        </Pressable>
     </View>
   )
 }
