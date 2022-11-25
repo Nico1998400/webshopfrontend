@@ -14,7 +14,7 @@ const  HomeScreen = () => {
     .then((res) => res.json())
     .then((data) => setProductList(data));
     console.log(productList)
-  }, 10000);
+  }, 1000);
   return () => clearInterval(interval)
   }, []);
 
