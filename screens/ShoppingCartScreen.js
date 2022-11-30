@@ -71,7 +71,7 @@ const ShoppingCartScreen = () => {
         <View key={key} >
           <Text>ProductName: {product.product.productName}</Text>
           <Text>ProductPrice: {product.product.price}</Text>
-          <Text>Quiantiy: {product.qty}</Text>
+          <Text>Quantity: {product.qty}</Text>
         </View>
       ))}
       <Pressable>

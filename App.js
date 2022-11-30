@@ -5,6 +5,8 @@ import AddProduct from "./screens/AddProduct";
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import ShoppingCartScreen from "./screens/ShoppingCartScreen";
+import EditScreen from "./screens/EditScreen";
+
 
 export default function App() {
 
@@ -18,6 +20,7 @@ export default function App() {
           <Stack.Screen name='productscreen' component={ProductScreen}/>
           <Stack.Screen name='addproduct' component={AddProduct}/>
           <Stack.Screen name='shoppingcartscreen' component={ShoppingCartScreen}/>
+          <Stack.Screen name="editscreen" component={EditScreen}/>
         </Stack.Navigator>
       </NavigationContainer>
       </CartProvider>
